@@ -14,7 +14,7 @@
         4000
     ],
     // Install dependencies and add the Git safe directory configuration
-	"postCreateCommand": "cd docs && bundle install && git config --global --add safe.directory /workspaces/mapkloud-website",
+	"postCreateCommand": "cd docs && bundle install && bundle exec jekyll serve && git config --global --add safe.directory /workspaces/mapkloud-website",
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {

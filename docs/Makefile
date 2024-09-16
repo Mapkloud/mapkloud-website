@@ -41,3 +41,11 @@ deploy:
 status:
 	@echo "Checking the status of the Jekyll site..."
 	$(JEKYLL) doctor
+
+stop:
+	@echo "Stopping jekyll server"
+	pkill -f $(JEKYLL)
+
+start:
+	@echo "Starting jekyll server"
+	bundle exec $(JEKYLL) serve
