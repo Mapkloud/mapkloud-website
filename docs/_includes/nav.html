@@ -27,15 +27,21 @@
                 <!-- Language Toggle -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="{{ '/en/img/tr.jpg' | relative_url }}" alt="Türkçe" style="width: 20px; height: auto; margin-right: 5px;"> 
+                        <img src="{{ '/en/img/en.jpg' | relative_url }}" alt="English" style="width: 20px; height: auto; margin-right: 5px;">
                         {{ site.data[page.lang].navbar.language[page.lang] }}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ '/' | relative_url }}">Türkçe</a>
+                            <a href="{{ '/' | relative_url }}">
+                                <img src="{{ '/en/img/tr.jpg' | relative_url }}" alt="Türkçe" style="width: 20px; height: auto; margin-right: 5px;"> Türkçe
+                            </a>
                         </li>
                         <li>
-                            <a href="{{ '/en/' | relative_url }}">English</a>
+                            <a href="{{ '/en/' | relative_url }}">
+                                <img src="{{ '/en/img/en.jpg' | relative_url }}" alt="English" style="width: 20px; height: auto; margin-right: 5px;"> English
+                            </a>
                         </li>
                     </ul>
                 </li>
