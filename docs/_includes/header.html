@@ -1,10 +1,12 @@
 <header>
     <div class="header-content">
         <div class="header-content-inner">
-            <h2>Dijital Dönüşümle Teknolojinin Gücünü En Üst Düzeye Çıkarın</h2>
+            <h2>{% if page.lang == "en" %}{{ site.data.en.header.title }}{% else %}{{ site.data.tr.header.title }}{% endif %}</h2>
             <hr>
-            <p>MapKloud, dijital dönüşüm ve teknoloji danışmanlığıyla iş süreçlerinizi dönüştürür. Modern çözümler ve kapsamlı destek ile teknolojinin gücünü en üst düzeye çıkararak verimliliğinizi artırır.</p>
-            <a href="#about" class="btn btn-default btn-xl page-scroll">DAHA FAZLA BİLGİ EDİNİN</a>
+            <p>{% if page.lang == "en" %}{{ site.data.en.header.description }}{% else %}{{ site.data.tr.header.description }}{% endif %}</p>
+            <a href="#about" class="btn btn-default btn-xl page-scroll">
+                {% if page.lang == "en" %}{{ site.data.en.header.button_text }}{% else %}{{ site.data.tr.header.button_text }}{% endif %}
+            </a>
         </div>
     </div>
 </header>
