@@ -1,0 +1,35 @@
+navbar:
+  brand: "MapKloud"
+  about: "ABOUT US"
+  services: "SERVICES"
+  contact: "CONTACT"
+  language_toggle: "Language Selection"
+  language:
+    tr: "Türkçe"
+    en: "English"
+
+header:
+  title: "Maximize the Power of Technology with Digital Transformation"
+  description: "MapKloud transforms your business processes with digital transformation and technology consulting. By maximizing the power of technology with modern solutions and comprehensive support, we enhance your efficiency."
+  button_text: "LEARN MORE"
+
+about:
+  title: "The Address of Modern Solutions!"
+  description: "At MapKloud, we offer a wide range of services in digital transformation and technology. We work to facilitate businesses' transition to modern infrastructures and help them make the most of the opportunities technology provides."
+  button_text: "OUR SERVICES"
+
+services:
+  title: "Our Services"
+  offerings:
+    - title: "Comprehensive Orchestration and Management Consulting"
+      description: "We provide design, deployment, and optimization services in Kubernetes, OpenShift, and multi-cloud architectures."
+    - title: "Cloud Transformation and Management Consulting"
+      description: "We deliver secure and scalable solutions by providing cloud strategy, migration, and deployment services on AWS, Azure, and GCP."
+    - title: "IoT Integration and Solution Consulting"
+      description: "We ensure the secure and efficient management of your IoT devices by connecting them to cloud systems. We develop solutions specifically for the agriculture, manufacturing, and automotive sectors."
+    - title: "Technology Consulting and Support Services"
+      description: "We address your corporate needs in information technology and software, supporting your transition to the latest and most secure software technologies."
+
+contact:
+  title: "Get in Touch with Us!"
+  description: "Ready to start your new project with us? Awesome! You can email us, and we’ll get back to you as soon as possible!"

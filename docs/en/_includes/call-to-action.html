@@ -1,0 +1,18 @@
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">
+                    {% if page.lang == "en" %}{{ site.data.en.about.title }}{% else %}{{ site.data.tr.about.title }}{% endif %}
+                </h2>
+                <hr class="light">
+                <p class="text-faded">
+                    {% if page.lang == "en" %}{{ site.data.en.about.description }}{% else %}{{ site.data.tr.about.description }}{% endif %}
+                </p>
+                <a href="#services" class="btn btn-default btn-xl">
+                    {% if page.lang == "en" %}{{ site.data.en.about.button_text }}{% else %}{{ site.data.tr.about.button_text }}{% endif %}
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

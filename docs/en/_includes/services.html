@@ -1,0 +1,92 @@
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">
+                    {% if page.lang == "en" %}{{ site.data.en.services.title }}{% else %}{{ site.data.tr.services.title }}{% endif %}
+                </h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-cogs wow bounceIn text-primary"></i>
+                    <h3>
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[0].title }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[0].title }}
+                        {% endif %}
+                    </h3>
+                    <p class="text-muted">
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[0].description }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[0].description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-cloud wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3>
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[1].title }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[1].title }}
+                        {% endif %}
+                    </h3>
+                    <p class="text-muted">
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[1].description }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[1].description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-sitemap wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3>
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[2].title }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[2].title }}
+                        {% endif %}
+                    </h3>
+                    <p class="text-muted">
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[2].description }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[2].description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-rocket wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                    <h3>
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[3].title }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[3].title }}
+                        {% endif %}
+                    </h3>
+                    <p class="text-muted">
+                        {% if page.lang == "en" %}
+                            {{ site.data.en.services.offerings[3].description }}
+                        {% else %}
+                            {{ site.data.tr.services.offerings[3].description }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
