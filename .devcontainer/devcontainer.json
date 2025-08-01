@@ -22,7 +22,7 @@
       }
     }
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "echo 'Dev container ready. Run: npm create astro@latest .'",
   "forwardPorts": [4321],
   "portsAttributes": {
     "4321": {
