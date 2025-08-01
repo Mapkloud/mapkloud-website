@@ -49,7 +49,7 @@ npm run dev
 
 This project is configured for automatic deployment to GitHub Pages:
 
-1. Push to the `mapkloud-site-modern` branch
+1. Push to the `main` branch
 2. GitHub Actions will automatically build and deploy
 3. Your site will be available at `https://mapkloud.com`
 
