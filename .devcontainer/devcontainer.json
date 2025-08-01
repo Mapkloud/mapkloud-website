@@ -3,18 +3,21 @@
 {
     "name": "${localWorkspaceFolderBasename}",
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "mcr.microsoft.com/devcontainers/jekyll:2-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
     "features": {
         "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
             "dockerDashComposeVersion": "v2"
-        }
+        },
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
+        3000,
         4000
     ],
     // Install dependencies and add the Git safe directory configuration
-	"postCreateCommand": "cd docs && bundle install && git config --global --add safe.directory /workspaces/mapkloud-website",
+	"postCreateCommand": "git config --global --add safe.directory /workspaces/mapkloud-website && npm install -g @nuxt/cli",
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {
@@ -25,16 +28,31 @@
                         "icon": "terminal-bash",
                         "path": "bash"
                     }
+                },
+                "typescript.preferences.includePackageJsonAutoImports": "on",
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll.eslint": "explicit"
                 }
             },
             "extensions": [
                 "mhutchie.git-graph",
-                "rebornix.ruby",
                 "yzhang.markdown-all-in-one",
                 "vivaxy.vscode-conventional-commits",
                 "nefrob.vscode-just-syntax",
-                "davidanson.vscode-markdownlint"
+                "davidanson.vscode-markdownlint",
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin",
+                "bradlc.vscode-tailwindcss",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "ms-vscode.vscode-typescript-next",
+                "formulahendry.auto-rename-tag",
+                "christian-kohler.path-intellisense",
+                "ms-vscode.vscode-json"
             ]
         }
-    }
+    },
+    "remoteUser": "node"
 }
