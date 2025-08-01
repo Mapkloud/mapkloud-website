@@ -1,5 +1,10 @@
 ---
 // Navbar component with dark mode toggle and smooth scrolling navigation
+
+// Get current path to determine navigation behavior
+const currentPath = Astro.url.pathname;
+const isHomePage = currentPath === '/';
+const isBlogPage = currentPath.startsWith('/blog/');
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/90 dark:border-gray-700 transition-all duration-300">
@@ -7,7 +12,7 @@
 		<div class="flex justify-between items-center h-16">
 			<!-- Logo -->
 			<div class="flex-shrink-0">
-				<a href="#home" class="flex items-center space-x-3">
+				<a href={isHomePage ? "#home" : "/"} class="flex items-center space-x-3">
 					<img src="/mk_logo.png" alt="MapKloud Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
 					<span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">MapKloud</span>
 				</a>
@@ -16,11 +21,11 @@
 			<!-- Desktop Navigation -->
 			<div class="hidden md:block">
 				<div class="ml-10 flex items-baseline space-x-8">
-					<a href="#home" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
-					<a href="#services" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
-					<a href="#industries" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Industries</a>
-					<a href="#blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Blog</a>
-					<a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Contact</a>
+					<a href={isHomePage ? "#home" : "/"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+					<a href={isHomePage ? "#services" : "/#services"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+					<a href={isHomePage ? "#industries" : "/#industries"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Industries</a>
+					<a href="/blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Blog</a>
+					<a href={isHomePage ? "#contact" : "/#contact"} class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Contact</a>
 				</div>
 			</div>
 
@@ -48,11 +53,11 @@
 		<!-- Mobile Navigation -->
 		<div id="mobileMenu" class="md:hidden hidden">
 			<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
-				<a href="#home" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Home</a>
-				<a href="#services" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Services</a>
-				<a href="#industries" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Industries</a>
-				<a href="#blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Blog</a>
-				<a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-lg text-base font-medium transition-colors duration-200">Contact</a>
+				<a href={isHomePage ? "#home" : "/"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Home</a>
+				<a href={isHomePage ? "#services" : "/#services"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Services</a>
+				<a href={isHomePage ? "#industries" : "/#industries"} class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Industries</a>
+				<a href="/blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Blog</a>
+				<a href={isHomePage ? "#contact" : "/#contact"} class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-lg text-base font-medium transition-colors duration-200">Contact</a>
 			</div>
 		</div>
 	</div>
@@ -100,19 +105,23 @@
 		});
 	});
 	
-	// Smooth scrolling for navigation links
+	// Smooth scrolling for navigation links (only on homepage)
 	const navLinks = document.querySelectorAll('a[href^="#"]');
 	navLinks.forEach(link => {
 		link.addEventListener('click', (e) => {
-			e.preventDefault();
-			const targetId = link.getAttribute('href');
-			const targetElement = document.querySelector(targetId || '');
-			if (targetElement) {
-				targetElement.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
+			// Only prevent default and handle smooth scrolling if we're on the homepage
+			if (window.location.pathname === '/') {
+				e.preventDefault();
+				const targetId = link.getAttribute('href');
+				const targetElement = document.querySelector(targetId || '');
+				if (targetElement) {
+					targetElement.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				}
 			}
+			// For other pages, let the default navigation happen
 		});
 	});
 </script> 

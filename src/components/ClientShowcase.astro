@@ -1,0 +1,102 @@
+---
+// Client Showcase component highlighting partnerships and achievements
+---
+
+<section class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- Section Header -->
+		<div class="text-center mb-16" data-aos="fade-up">
+			<h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+				We build lasting partnerships with our clients
+			</h2>
+			<p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+				Our commitment to excellence and innovation has earned us the trust of industry leaders worldwide
+			</p>
+		</div>
+
+		<!-- Statistics Grid -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16" data-aos="fade-up" data-aos-delay="200">
+			<!-- Projects Delivered -->
+			<div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">50+</h3>
+					<p class="text-lg text-gray-600 dark:text-gray-300 font-medium">Projects Delivered</p>
+				</div>
+			</div>
+
+			<!-- Active Clients -->
+			<div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">10+</h3>
+					<p class="text-lg text-gray-600 dark:text-gray-300 font-medium">Active Clients</p>
+					<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Including Fortune 500 companies</p>
+				</div>
+			</div>
+
+			<!-- Years on Market -->
+			<div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+				<div class="text-center">
+					<div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+						<svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+						</svg>
+					</div>
+					<h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-2">15+</h3>
+					<p class="text-lg text-gray-600 dark:text-gray-300 font-medium">Years on the Market</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Call to Action -->
+		<div class="text-center mt-16" data-aos="fade-up" data-aos-delay="800">
+			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+				Ready to join our growing list of satisfied clients?
+			</p>
+			<a href="#contact" class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+				Start Your Project
+				<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+				</svg>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	/* Custom animations for the statistics cards */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Add smooth hover effects */
+	.bg-white:hover, .dark .bg-gray-800:hover {
+		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	}
+
+	/* Gradient text effect for the main heading */
+	.text-4xl {
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+</style> 
