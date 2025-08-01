@@ -1,0 +1,159 @@
+---
+// Logo carousel with auto-scrolling client/partner logos
+---
+
+<section class="py-16 bg-white dark:bg-gray-800">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- Section Header -->
+		<div class="text-center mb-12" data-aos="fade-up">
+			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+				Trusted by Industry Leaders
+			</h2>
+			<p class="text-lg text-gray-600 dark:text-gray-300">
+				We partner with organizations across various sectors to deliver innovative solutions
+			</p>
+		</div>
+
+		<!-- Logo Carousel -->
+		<div class="swiper logo-swiper" data-aos="fade-up" data-aos-delay="200">
+			<div class="swiper-wrapper">
+				<!-- Logo 1 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">TechCorp</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 2 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">HealthPlus</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 3 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">FinServe</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 4 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">ManufactureX</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 5 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-red-600 to-red-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">GovTech</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 6 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">EduSmart</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 7 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-teal-600 to-teal-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">RetailPro</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 8 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-pink-600 to-pink-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">DataFlow</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 9 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">CloudTech</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Logo 10 -->
+				<div class="swiper-slide">
+					<div class="flex items-center justify-center h-20">
+						<div class="w-32 h-12 bg-gradient-to-r from-cyan-600 to-cyan-700 rounded-lg flex items-center justify-center">
+							<span class="text-white font-bold text-lg">AISolutions</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// Initialize Swiper for logo carousel
+	document.addEventListener('DOMContentLoaded', function() {
+		// Wait a bit for Swiper to load
+		setTimeout(function() {
+			if (typeof Swiper !== 'undefined') {
+			const logoSwiper = new Swiper('.logo-swiper', {
+				slidesPerView: 2,
+				spaceBetween: 30,
+				loop: true,
+				autoplay: {
+					delay: 2000,
+					disableOnInteraction: false,
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 3,
+					},
+					768: {
+						slidesPerView: 4,
+					},
+					1024: {
+						slidesPerView: 5,
+					},
+					1280: {
+						slidesPerView: 6,
+					},
+				},
+				});
+			} else {
+				console.warn('Swiper library not loaded');
+			}
+		}, 100);
+	});
+</script>
+
+<style>
+	.logo-swiper .swiper-slide {
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+	
+	.logo-swiper .swiper-slide:hover {
+		opacity: 1;
+	}
+</style> 

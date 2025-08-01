@@ -1,0 +1,120 @@
+---
+// Navbar component with dark mode toggle and smooth scrolling navigation
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-gray-900/90 dark:border-gray-700 transition-all duration-300">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex justify-between items-center h-16">
+			<!-- Logo -->
+			<div class="flex-shrink-0">
+				<a href="#home" class="flex items-center space-x-3">
+					<img src="/mk_logo.png" alt="MapKloud Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain">
+					<span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">MapKloud</span>
+				</a>
+			</div>
+
+			<!-- Desktop Navigation -->
+			<div class="hidden md:block">
+				<div class="ml-10 flex items-baseline space-x-8">
+					<a href="#home" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+					<a href="#services" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+					<a href="#industries" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Industries</a>
+					<a href="#projects" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Projects</a>
+					<a href="#blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium transition-colors duration-200">Blog</a>
+					<a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Contact</a>
+				</div>
+			</div>
+
+			<!-- Dark Mode Toggle & Mobile Menu Button -->
+			<div class="flex items-center space-x-4">
+				<!-- Dark Mode Toggle -->
+				<button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+					<svg id="sunIcon" class="w-5 h-5 text-gray-600 dark:text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+					</svg>
+					<svg id="moonIcon" class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+					</svg>
+				</button>
+
+				<!-- Mobile menu button -->
+				<button id="mobileMenuButton" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200">
+					<svg class="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+
+		<!-- Mobile Navigation -->
+		<div id="mobileMenu" class="md:hidden hidden">
+			<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
+				<a href="#home" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Home</a>
+				<a href="#services" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Services</a>
+				<a href="#industries" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Industries</a>
+				<a href="#projects" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Projects</a>
+				<a href="#blog" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 block px-3 py-2 text-base font-medium transition-colors duration-200">Blog</a>
+				<a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white block px-3 py-2 rounded-lg text-base font-medium transition-colors duration-200">Contact</a>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<script>
+	// Dark mode toggle functionality
+	const darkModeToggle = document.getElementById('darkModeToggle');
+	const sunIcon = document.getElementById('sunIcon');
+	const moonIcon = document.getElementById('moonIcon');
+	
+	function updateDarkMode() {
+		const isDark = document.documentElement.classList.contains('dark');
+		if (isDark) {
+			sunIcon?.classList.remove('hidden');
+			moonIcon?.classList.add('hidden');
+		} else {
+			sunIcon?.classList.add('hidden');
+			moonIcon?.classList.remove('hidden');
+		}
+	}
+	
+	darkModeToggle?.addEventListener('click', () => {
+		document.documentElement.classList.toggle('dark');
+		localStorage.setItem('darkMode', document.documentElement.classList.contains('dark').toString());
+		updateDarkMode();
+	});
+	
+	// Initialize dark mode icons
+	updateDarkMode();
+	
+	// Mobile menu functionality
+	const mobileMenuButton = document.getElementById('mobileMenuButton');
+	const mobileMenu = document.getElementById('mobileMenu');
+	
+	mobileMenuButton?.addEventListener('click', () => {
+		mobileMenu?.classList.toggle('hidden');
+	});
+	
+	// Close mobile menu when clicking on a link
+	const mobileLinks = mobileMenu?.querySelectorAll('a');
+	mobileLinks?.forEach(link => {
+		link.addEventListener('click', () => {
+			mobileMenu?.classList.add('hidden');
+		});
+	});
+	
+	// Smooth scrolling for navigation links
+	const navLinks = document.querySelectorAll('a[href^="#"]');
+	navLinks.forEach(link => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const targetId = link.getAttribute('href');
+			const targetElement = document.querySelector(targetId || '');
+			if (targetElement) {
+				targetElement.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+			}
+		});
+	});
+</script> 
