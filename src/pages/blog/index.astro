@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const blogPosts = [
+	{
+		title: "The Future of Cloud Migration: Trends to Watch in 2025",
+		excerpt: "Explore the emerging trends in cloud migration that will shape the digital transformation landscape in 2025, from multi-cloud strategies to edge computing integration.",
+		date: "December 15, 2024",
+		author: "MapKloud Team",
+		slug: "cloud-migration-trends-2025",
+		categories: ["Cloud", "Migration"],
+		readTime: "5 min read"
+	},
+	{
+		title: "AI-Powered Automation: Transforming Business Processes",
+		excerpt: "Discover how artificial intelligence is revolutionizing business process automation, from intelligent document processing to predictive analytics.",
+		date: "December 10, 2024",
+		author: "MapKloud Team",
+		slug: "ai-automation-business-processes",
+		categories: ["AI", "Automation"],
+		readTime: "7 min read"
+	},
+	{
+		title: "Data-Driven Decision Making: A Strategic Guide",
+		excerpt: "Learn how organizations can leverage data analytics and business intelligence to make informed strategic decisions and drive growth.",
+		date: "December 5, 2024",
+		author: "MapKloud Team",
+		slug: "data-driven-decision-making-guide",
+		categories: ["Analytics", "Strategy"],
+		readTime: "6 min read"
+	},
+	{
+		title: "Multi-Cloud Strategy: Best Practices for Enterprise",
+		excerpt: "Navigate the complexities of multi-cloud environments with proven strategies for cost optimization, security, and performance management.",
+		date: "November 28, 2024",
+		author: "MapKloud Team",
+		slug: "multi-cloud-strategy-best-practices",
+		categories: ["Cloud", "Enterprise"],
+		readTime: "8 min read"
+	},
+	{
+		title: "RPA Implementation: From Planning to Production",
+		excerpt: "A comprehensive guide to implementing Robotic Process Automation in your organization, covering planning, development, and deployment phases.",
+		date: "November 20, 2024",
+		author: "MapKloud Team",
+		slug: "rpa-implementation-guide",
+		categories: ["RPA", "Automation"],
+		readTime: "10 min read"
+	},
+	{
+		title: "Cybersecurity in the Cloud: Essential Protection Strategies",
+		excerpt: "Essential cybersecurity strategies for cloud environments, including identity management, data protection, and compliance frameworks.",
+		date: "November 15, 2024",
+		author: "MapKloud Team",
+		slug: "cloud-cybersecurity-strategies",
+		categories: ["Security", "Cloud"],
+		readTime: "9 min read"
+	}
+];
+---
+
+<Layout title="Blog - MapKloud Insights" description="Stay updated with the latest trends in digital transformation, cloud technologies, and AI solutions from MapKloud experts.">
+	<Navbar />
+	
+	<!-- Blog Header -->
+	<section class="pt-32 pb-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+					Latest Insights
+				</h1>
+				<p class="text-xl text-blue-100 max-w-3xl mx-auto">
+					Stay updated with the latest trends in digital transformation, cloud technologies, and AI solutions.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog Posts -->
+	<section class="py-20 bg-gray-50 dark:bg-gray-900">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				{blogPosts.map((post) => (
+					<article class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+						<div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+							<svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+							</svg>
+						</div>
+						<div class="p-6">
+							<div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-3">
+								<span>{post.date}</span>
+								<span>{post.readTime}</span>
+							</div>
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+								{post.title}
+							</h3>
+							<p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+								{post.excerpt}
+							</p>
+							<div class="flex items-center justify-between">
+								<div class="flex items-center space-x-2">
+									{post.categories.map((category) => (
+										<span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full">
+											{category}
+										</span>
+									))}
+								</div>
+								<a href={`/blog/${post.slug}`} class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium text-sm">
+									Read more →
+								</a>
+							</div>
+						</div>
+					</article>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<Footer />
+</Layout>
+
+<style>
+	.line-clamp-3 {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+</style> 
