@@ -1,43 +1,133 @@
 ---
 export interface Props {
 	title: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { title, description = "MapKloud - Your trusted partner for innovative cloud solutions and digital transformation. We specialize in cloud migration, AI solutions, and data-driven decision systems." } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="MapKloud - Your Cloud Solutions Partner" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/mk_logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		
+		<!-- SEO Meta Tags -->
+		<meta name="keywords" content="cloud migration, artificial intelligence, RPA, data analytics, digital transformation, cloud solutions, AI consulting" />
+		<meta name="author" content="MapKloud" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		
+		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+		
+		<!-- AOS CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+		
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
-	<body class="font-sans antialiased">
+	<body class="font-sans antialiased transition-colors duration-300">
+		<!-- Dark mode script -->
+		<script is:inline>
+			// Check for saved dark mode preference or default to light mode
+			if (localStorage.getItem('darkMode') === 'true' || 
+				(!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
+		
 		<slot />
+		
+		<!-- AOS JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+		
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		
+		<!-- Initialize AOS -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Wait a bit for AOS to load
+				setTimeout(function() {
+					if (typeof AOS !== 'undefined') {
+						AOS.init({
+							duration: 800,
+							easing: 'ease-in-out',
+							once: true,
+							offset: 100
+						});
+					} else {
+						console.warn('AOS library not loaded, animations will be disabled');
+						// Remove AOS attributes to prevent errors
+						document.querySelectorAll('[data-aos]').forEach(function(el) {
+							el.removeAttribute('data-aos');
+							el.removeAttribute('data-aos-delay');
+						});
+					}
+				}, 100);
+			});
+		</script>
 	</body>
 </html>
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: 59, 130, 246;
+		--accent-light: 147, 197, 253;
+		--accent-dark: 30, 64, 175;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
 	}
+	
 	html {
 		font-family: 'Inter', system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		scroll-behavior: smooth;
 	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
+	
+	/* Custom scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+	}
+	
+	::-webkit-scrollbar-track {
+		background: #f1f5f9;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background: #3b82f6;
+		border-radius: 4px;
+	}
+	
+	::-webkit-scrollbar-thumb:hover {
+		background: #2563eb;
+	}
+	
+	.dark ::-webkit-scrollbar-track {
+		background: #1e293b;
+	}
+	
+	.dark ::-webkit-scrollbar-thumb {
+		background: #3b82f6;
+	}
+	
+	.dark ::-webkit-scrollbar-thumb:hover {
+		background: #2563eb;
+	}
+	
+	/* Smooth transitions for dark mode */
+	* {
+		transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 	}
 </style> 
