@@ -4,8 +4,18 @@ export default {
   darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        "navy-deep": "#0B1B37",
+        navy: "#142850",
+        "cloud-blue": "#2E86C1",
+        "ice-blue-bg": "#EAF2FA",
+        "ice-blue-border": "#D6E6F5",
+        "text-gray": "#4A5568",
+        "text-muted": "#6B7A90",
+      },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",

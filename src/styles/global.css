@@ -1,1 +1,56 @@
-@import "tailwindcss";
+/* MapKloud design tokens — premium consulting design system */
+:root {
+	--color-navy-deep: #0b1b37;
+	--color-navy: #142850;
+	--color-cloud-blue: #2e86c1;
+	--color-ice-blue-bg: #eaf2fa;
+	--color-ice-blue-border: #d6e6f5;
+	--color-text-gray: #4a5568;
+	--color-text-muted: #6b7a90;
+	--color-white: #ffffff;
+}
+
+html {
+	font-family: "Inter", system-ui, sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	color: var(--color-text-gray);
+	background-color: var(--color-white);
+}
+
+/* Section label: small caps / bold uppercase + short accent bar beneath */
+.section-label {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.section-label-bar {
+	display: block;
+	width: 44px;
+	height: 3px;
+	margin-top: 10px;
+	background-color: var(--color-cloud-blue);
+}
+
+/* Custom scrollbar in the single-theme palette */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-ice-blue-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-cloud-blue);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-navy);
+}

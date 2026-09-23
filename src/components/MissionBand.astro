@@ -1,0 +1,19 @@
+---
+// Key-message band — solid navy background, centered italic white text. Used once per page.
+export interface Props {
+	quote?: string;
+}
+
+const {
+	quote = "We don't just advise — we build, deploy, and deliver outcomes that matter.",
+} = Astro.props;
+---
+
+<section class="bg-navy py-14 sm:py-16">
+	<div class="container mx-auto px-6 lg:px-8 max-w-3xl text-center" data-aos="fade-up" data-aos-duration="700">
+		<span class="block w-11 h-[3px] bg-cloud-blue mx-auto mb-6"></span>
+		<p class="font-serif italic text-white text-xl sm:text-2xl leading-relaxed">
+			"{quote}"
+		</p>
+	</div>
+</section>
